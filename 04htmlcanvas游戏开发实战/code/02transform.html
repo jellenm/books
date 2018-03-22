@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d');
+        canvas.width = canvas.height = 400;
+
+        var face = new Image();
+        face.src = '../images/face.jpg';
+        face.onload = function(){
+            var w = face.width,
+                h = face.height,
+                angle = 30;
+
+            ctx.save();
+            ctx.beginPath();
+            var point0 = [Math.sin(Math.PI*angle/180)*w,0],
+                point2 = [0,Math.cos(Math.PI*angle/180)*w],
+                point1 = [point0[0] + Math.cos(Math.PI*angle/180)*w,point0[0]];
+            ctx.moveTo(point1[0],point1[1]);
+            ctx.lineTo(point0[0],point0[1]);
+            ctx.lineTo(point2[0],point2[1]);
+            ctx.closePath();
+            ctx.stroke();
+            ctx.clip();
+            ctx.transform((point1[0] - point0[0])/w,(point1[1] - point0[1])/w,(point2[0] - point0[0])/h,(point2[1] -point0[1])/h,point0[0],point0[1]);
+            ctx.drawImage(face,0,0);
+            ctx.restore();
+
+            angle = 90 - angle + 10;
+            var point3 = [Math.sin(Math.PI*angle/180)*w,point1[1]+Math.cos(Math.PI*angle/180)*w];
+            ctx.beginPath();
+            ctx.moveTo(point1[0],point1[1]);
+            ctx.lineTo(point2[0],point2[1]);
+            ctx.lineTo(point3[0],point3[1]);
+            ctx.closePath();
+            ctx.clip();
+            ctx.setTransform((point3[0] - point2[0])/w,(point3[1] - point2[1])/w,(point3[0] - point1[0])/h,(point3[1] - point1[1])/h,point2[0],point2[1]);
+            ctx.drawImage(face,0,0-h); //tudo 此处有疑问
+
+        }
+    </script>
+</body>
+</html>

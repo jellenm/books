@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        #canvas,
+        #canvasSetTransform,
+        #canvasTilt{
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <canvas id="canvasSetTransform"></canvas>
+    <canvas id="canvasTilt"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas'),
+            canvasSet = document.getElementById('canvasSetTransform'),
+            canvasTilt = document.getElementById('canvasTilt'),
+            context = canvas.getContext('2d'),
+            contextSet = canvasSet.getContext('2d'),
+            contextTilt = canvasTilt.getContext('2d');
+        canvas.width = canvas.height = canvasSet.width = canvasSet.height = canvasTilt.width = canvasTilt.height = 300;
+
+
+        //transform
+        context.strokeStyle = 'rgb(0,0,0)';
+        context.strokeRect(100,50,80,60);
+
+        context.save();
+        context.transform(Math.cos(5*Math.PI/180),Math.sin(5*Math.PI/180),-Math.sin(5*Math.PI/180),Math.cos(5*Math.PI/180),0,0);
+        context.strokeStyle = 'rgba(0,0,0,0.5)';
+        context.strokeRect(100,50,80,60);
+
+        context.transform(Math.cos(5*Math.PI/180),Math.sin(5*Math.PI/180),-Math.sin(5*Math.PI/180),Math.cos(5*Math.PI/180),0,0);
+        context.strokeStyle = 'rgba(0,0,0,0.2)';
+        context.strokeRect(100,50,80,60);
+        context.restore();
+
+
+        //setTransform
+        contextSet.strokeStyle = 'rgb(255,0,0)';
+        contextSet.strokeRect(100,50,80,60);
+
+        contextSet.transform(Math.cos(5*Math.PI/180),Math.sin(5*Math.PI/180),-Math.sin(5*Math.PI/180),Math.cos(5*Math.PI/180),0,0);
+        contextSet.strokeStyle = 'rgba(255,0,0,0.5)';
+        contextSet.strokeRect(100,50,80,60);
+
+        contextSet.setTransform(Math.cos(5*Math.PI/180),Math.sin(5*Math.PI/180),-Math.sin(5*Math.PI/180),Math.cos(5*Math.PI/180),0,0);
+        contextSet.strokeStyle = 'rgba(255,0,0,0.2)';
+        contextSet.strokeRect(100,50,80,60);
+
+
+        //倾斜 倾斜后的w和h是边框的边长
+        var point0 = [40,40],
+            point1 = [100,20],
+            point2 = [20,80],
+            w = point1[0] - point0[0],
+            h = point2[1] - point0[1];
+        contextTilt.strokeStyle = 'rgb(0,0,0)';
+        contextTilt.strokeRect(40,40,w,h);
+
+        contextTilt.transform((point1[0] - point0[0])/w,(point1[1] - point0[1])/h,(point2[0] - point0[0])/w,(point2[1] - point0[1])/h,point0[0],point0[1]);
+        contextTilt.strokeRect(40,40,w,h);
+
+
+
+
+
+    </script>
+</body>
+</html>
