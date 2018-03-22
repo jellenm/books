@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        svg{
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <svg width="500" height="500">
+        <title>basic</title>
+        <desc>basic</desc>
+        <!--<line x1="0" y1="0" x2="300" y2="500" style="stroke:black;stroke-width:5;stroke-opacity:0.5;stroke-dasharray: 9,5,5,9;"></line>-->
+
+        <!--<rect x="10" y="10" width="100" height="100" rx="10" ry="10" style="stroke:red;stroke-width: 7;stroke-opacity:0.7;"></rect>-->
+
+        <!--<circle cx="200" cy="100" r="50" style="stroke-width: 5;stroke:rgb(0,0,0);fill:none;"></circle>-->
+
+        <!--<ellipse cx="300" cy="400" rx="30" ry="50" style="stroke-width: 5;stroke:rgb(0,0,0);fill:none;"></ellipse>-->
+
+        <!--<polygon points ="48,16 16,96 96,48 0,48 80,96" style ="stroke:black; fill :black; fill-rule: evenodd;"/>-->
+
+        <!--<polygon points="5 20, 20 20, 25 10, 35 30, 45 10,55 30, 65 10, 75 30, 80 20, 95 20" style="fill:none;stroke:rgb(0,0,0);"></polygon>-->
+
+        <!--<polyline points="90 30, 105 15, 120 30" style="fill:none;stroke-width:12;stroke:rgb(0,0,0);stroke-linejoin: bevel;"></polyline>-->
+
+        <!--<g id="men" style="stroke:rgb(0,0,0);fill:none;">-->
+            <!--<circle cx="85" cy="56" r="10"/>-->
+            <!--<line x1="85" y1="66" x2="85" y2="80"/>-->
+            <!--<polyline points="76 104, 85 80, 94 104" />-->
+            <!--<polyline points="76 70, 85 76, 94 70" />-->
+        <!--</g>-->
+
+        <!--<defs>-->
+            <!--<g id="man" >-->
+                <!--<circle cx="50" cy="50" r="25"></circle>-->
+            <!--</g>-->
+        <!--</defs>-->
+        <!--<use xlink:href="#man" x="0" y="0"></use>-->
+        <!--<use xlink:href="#man" x="100" y="100" style="fill:none;stroke-width:3;stroke:rgb(0,0,0);"></use>-->
+
+        <!--<defs>-->
+            <!--<symbol id="circle" viewBox="0 0 50 80" preserveAspectRatio="xMinYMin slice">-->
+                <!--<circle cx="50" cy="50" r="25"></circle>-->
+            <!--</symbol>-->
+        <!--</defs>-->
+        <!--<use xlink:href="#circle" style="stroke-width: 3;fill:none;stroke:rgb(0,0,0);" x="10" y="10" width="50" height="50"></use>-->
+
+
+        <!--<image xlink:href="../../images/1.jpg" x="10" y="10" width="200" height="400"></image>-->
+
+        <!--<defs>-->
+            <!--<g id="circle" >-->
+                <!--<circle cx="50" cy="50" r="25"></circle>-->
+            <!--</g>-->
+        <!--</defs>-->
+        <!--<use xlink:href="#circle" transform="scale(2,3)" style="stroke-width: 2;stroke:rgb(0,0,0);fill:none;"></use>-->
+        <!--<use xlink:href="#circle" style="stroke-width: 2;stroke:rgb(0,0,0);fill:none;"></use>-->
+
+        <!--<rect x="0" y="0" transform="scale(2),translate(50,50)" width="100" height="50" style="stroke-width: 3;stroke: rgb(0,0,0);fill:none;"></rect>-->
+        <!--<rect x="0" y="0"  transform="translate(50,50),scale(2)" width="100" height="50" style="stroke-width: 3;stroke: rgb(255,0,0);fill:none;"></rect>-->
+
+        <!--<defs>-->
+            <!--<g id="transform" transform="translate(0,500) scale(1,-1)" style="stroke-width: 2;stroke:rgb(0,0,0);fill:none;" >-->
+                <!--<line x1="1" y1="1" x2="0" y2="500"  ></line>-->
+                <!--<line x1="1" y1="1" x2="500" y2="0"  ></line>-->
+                <!--<polygon points="40 40, 100 40, 70 70, 40 70"></polygon>-->
+            <!--</g>-->
+        <!--</defs>-->
+        <!--<use xlink:href="#transform" x="0" y="0"></use>-->
+
+
+        <!--<defs>-->
+            <!--<g id="arrow"  >-->
+                <!--<line x1="0" y1="30" x2="60" y2="30"  style="stroke-width: 3"></line>-->
+                <!--<polygon points="60 25, 60 35,70 30"  ></polygon>-->
+            <!--</g>-->
+        <!--</defs>-->
+        <!--<use xlink:href="#arrow" x="50" y="50" style="fill: rgb(0,0,0);stroke:rgb(0,0,0)"></use>-->
+        <!--<use xlink:href="#arrow" x="50" y="50" style="fill: rgb(255,0,0);stroke:rgb(255,0,0)" transform="rotate(10,0,0)" ></use>-->
+        <!--<use xlink:href="#arrow" x="50" y="50" style="fill: rgb(0,255,0);stroke:rgb(0,255,0)" transform="rotate(10,50,50)" ></use>-->
+
+
+        <!--<defs>-->
+            <!--<g id="rect">-->
+                <!--<rect x="0" y="0" width="50" height="30"></rect>-->
+            <!--</g>-->
+        <!--</defs>-->
+        <!--<line x1="50" y1="0" x2="50" y2="100" transform="scale(2)" style="stroke: rgb(0,0,0);"></line>-->
+        <!--<line x1="0" y1="50" x2="100" y2="50" transform="scale(2)" style="stroke: rgb(0,0,0);"></line>-->
+        <!--<line x1="50" y1="0" x2="50" y2="100"  style="stroke: rgb(0,0,0);"></line>-->
+        <!--<line x1="0" y1="50" x2="100" y2="50"  style="stroke: rgb(0,0,0);"></line>-->
+        <!--<use xlink:href="#rect" transform="translate(25,35) " style="stroke: rgb(0,0,0);stroke-width:3;fill:none;"></use>-->
+        <!--<use xlink:href="#rect" transform="scale(2) translate(25,35)" style="stroke: rgb(255,0,0);stroke-width:3;fill:none;" ></use>-->
+
+
+        <!--<path d="M10 10,L20 50,Z" style="stroke:rgb(0,0,0);"></path>-->
+        <!--<path d="M 12 24 h 15 v 25 h -15 z"></path>-->
+        <!--<path d="M10 10,h 40,v 20,h -40,Z" style="stroke:rgb(0,0,0);fill:none"></path>-->
+        <!--<path d="M10 10,L20 50 50 50,Z" style="stroke:rgb(0,0,0);fill:none;"></path>-->
+
+        <!--<path d="M50 50 A70 30 0 1 1 190 50" style="stroke: rgb(0,0,0);fill:none;"></path>-->
+
+        <!--<ellipse cx ='154' cy ='154' rx ='150' ry ='120' style ='fill:#999999;'/>-->
+        <!--<ellipse cx ='152' cy ='152' rx ='150' ry ='120' style ='fill:#cceeff;'/>-->
+        <!--<path d="M302 154A150 120 0 1 0 2 154  A70 60 0 1 0 154 154" style="fill: #ffcccc"></path>-->
+        <!--<path d="M302 154A70 60 0 1 0 154 154" style="fill:#cceeff"></path>-->
+
+        <!--<path d ='M30 75 Q 240 30,300 120' style ='stroke:black; fill:none;'/>-->
+        <!--<path d="M30 100 Q 80 30, 100 100, 130 65, 200 80" style="fill:none;stroke:rgb(0,0,0)"></path>-->
+        <!--<path d="M30 100 Q 80 30, 100 100 T 200 80" style="fill:none;stroke:rgb(0,0,0)"/>-->
+        <!--<path d="M20 80 C 50 20, 150 60, 200 120" style="stroke: black; fill: none;"/>-->
+        <!--<path d="M30 100 C 50 50, 70 20, 100 100, 110, 130, 45, 150, 65, 100" style="stroke: black; fill: none;"/>-->
+        <!--<path d="M30 100 C 50 30,70 50,100 100 S 150 40,200 80" style="stroke: black; fill: none;"/>-->
+
+        <!--<defs>-->
+            <!--<pattern id="cs1" x="0" y="0" width="20%" height="20%" patternUnits="objectBoundingBox" style="fill:none;stroke:rgb(0,0,0)">-->
+                <!--<path d="M0 0Q 5 20 10 10 T20 20"></path>-->
+                <!--<path d="M0 0 L0 20 20 20 20 0"></path>-->
+            <!--</pattern>-->
+            <!--<pattern id="cs2" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" style="fill:none;stroke:rgb(0,0,0);">-->
+                <!--<path d="M0 0Q5 20 10 10 T20 20"></path>-->
+                <!--<path d="M0 0 L0 20 20 20 20 0"></path>-->
+            <!--</pattern>-->
+            <!--<pattern id="cs3" x="0" y="0" width="0.2" height="0.2" patternUnits="objectBoundingBox" patternContentUnits ="objectBoundingBox" >-->
+                <!--<path d="M0 0Q0.05 0.2 0.1 0.1 T0.2 0.2" style="fill:none;stroke:rgb(0,0,0);stroke-width: 0.01;"></path>-->
+                <!--<path d="M0 0 L0 0.2 0.2 0.2 0.2 0" style="fill:none;stroke:rgb(0,0,0);stroke-width: 0.01;"></path>-->
+            <!--</pattern>-->
+            <!--<pattern id="cs4" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"  viewBox="0 0 100 100" >-->
+                <!--<path d="M0 0Q25 100 50 50 T100 100" style="fill:none;stroke:rgb(0,0,0);stroke-width:5;"></path>-->
+                <!--<path d="M0 0 L0 100 100 100 100 0" style="fill:none;stroke:rgb(0,0,0);stroke-width:5;"></path>-->
+            <!--</pattern>-->
+        <!--</defs>-->
+        <!--<rect x="0" y="0" width="150" height="150" style="fill:url(#cs1);"></rect>-->
+        <!--<rect x="160" y="0" width="150" height="150" style="fill:url(#cs2);"></rect>-->
+        <!--<rect x="0" y="160" width="150" height="150" style="fill:url(#cs3);stroke: rgb(0,0,0);"></rect>-->
+        <!--<rect x="160" y="160" width="150" height="150" style="fill:url(#cs4);stroke:rgb(0,0,0);"></rect>-->
+
+        <!--<defs>-->
+            <!--<pattern id='pattern1' x='0' y='0' width='20' height='20' patternUnits='userSpaceOnUse'>-->
+                <!--<path d='M0 0 Q5 20 10 10 T20 20' style='stroke:rgb(0,0,0);fill:none;stroke-width:1'></path>-->
+                <!--<path d="M0 0L0 20 20 20 20 0" style='stroke:rgb(0,0,0);fill:none;stroke-width:1'></path>-->
+            <!--</pattern>-->
+        <!--</defs>-->
+        <!--<rect x='0' y='0' width='100' height='100' style='fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width:1'></rect>-->
+        <!--<rect x="110" y="0" width="100" height="100" style="fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width: 1;"></rect>-->
+        <!--<rect x="210" y="0" width="150" height="150" style="fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width: 1;"></rect>-->
+
+        <!--<defs>-->
+        <!--<pattern id='pattern1' x='0' y='0' width='20%' height='20%' patternUnits='objectBoundingBox'>-->
+        <!--<path d='M0 0 Q5 20 10 10 T20 20' style='stroke:rgb(0,0,0);fill:none;stroke-width:1'></path>-->
+        <!--<path d="M0 0L0 20 20 20 20 0" style='stroke:rgb(0,0,0);fill:none;stroke-width:1'></path>-->
+        <!--</pattern>-->
+        <!--</defs>-->
+        <!--<rect x='0' y='0' width='100' height='100' style='fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width:1'></rect>-->
+        <!--<rect x="110" y="0" width="100" height="100" style="fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width: 1;"></rect>-->
+        <!--<rect x="210" y="0" width="150" height="150" style="fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width: 1;"></rect>-->
+
+        <!--<defs>-->
+            <!--<pattern id='pattern1' x='0' y='0' width='20%' height='20%' patternUnits='objectBoundingBox' patternContentUnits="objectBoundingBox">-->
+                <!--<path d='M0 0 Q0.05 0.2 0.1 0.1 T0.2 0.2' style='stroke:rgb(0,0,0);fill:none;stroke-width:0.01'></path>-->
+                <!--<path d="M0 0L0 0.2 0.2 0.2 0.2 0" style='stroke:rgb(0,0,0);fill:none;stroke-width:0.01'></path>-->
+            <!--</pattern>-->
+        <!--</defs>-->
+        <!--<rect x='0' y='0' width='100' height='100' style='fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width:1'></rect>-->
+        <!--<rect x="110" y="0" width="100" height="100" style="fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width: 1;"></rect>-->
+        <!--<rect x="210" y="0" width="150" height="150" style="fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width: 1;"></rect>-->
+
+
+        <!--<defs>-->
+        <!--<pattern id='pattern1' x='0' y='0' width='20' height='20' patternUnits='userSpaceOnUse' viewBox="0 0 100 100">-->
+        <!--<path d='M0 0 Q25 100 50 50 T100 100' style='stroke:rgb(0,0,0);fill:none;stroke-width:5'></path>-->
+        <!--<path d="M0 0L0 100 100 100 100 0" style='stroke:rgb(0,0,0);fill:none;stroke-width:5'></path>-->
+        <!--</pattern>-->
+        <!--</defs>-->
+        <!--<rect x='0' y='0' width='100' height='100' style='fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width:1'></rect>-->
+        <!--<rect x="110" y="0" width="100" height="100" style="fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width: 1;"></rect>-->
+        <!--<rect x="210" y="0" width="150" height="150" style="fill:url(#pattern1);stroke:rgb(0,0,0);stroke-width: 1;"></rect>-->
+
+
+        <!--<defs>-->
+            <!--<pattern id="cs2" width="6" height="6" x="0" y="0" patternUnits="userSpaceOnUse">-->
+                <!--<path d="M0 6 L6 6" style="fill:none;stroke: rgb(0,0,0);stroke-width: 1;"></path>-->
+            <!--</pattern>-->
+            <!--<pattern id="cs1" width="36" height="36" x="0" y="0" patternUnits="userSpaceOnUse">-->
+                <!--<circle cx="18" cy="18" r="16" style="fill:url(#cs2);stroke:rgb(0,0,0);stroke-width: 1;"></circle>-->
+            <!--</pattern>-->
+        <!--</defs>-->
+        <!--<rect x="0" y="0" width="200" height="200" style="fill:url(#cs1);stroke:rgb(0,0,0);stroke-width:1;"></rect>-->
+
+        <!--<defs>-->
+            <!--<linearGradient id="l-r">-->
+                <!--<stop offset="0%" style="stop-color:#ffcc00;"></stop>-->
+                <!--<stop offset="100%" style="stop-color:#0099cc;"></stop>-->
+            <!--</linearGradient>-->
+            <!--<linearGradient id="r-l" xlink:href="#l-r" x1="100%" x2="0" y1="0"></linearGradient>-->
+            <!--<linearGradient id="t-b" xlink:href="#l-r" x1="0" x2="0" y1="0" y2="100%"></linearGradient>-->
+            <!--<linearGradient id="b-t" xlink:href="#l-r" x1="0" x2="0" y1="100%" y2="0"></linearGradient>-->
+            <!--<linearGradient id="lt-rb" xlink:href="#l-r" x1="0" x2="100%" y1="0" y2="100%"></linearGradient>-->
+        <!--</defs>-->
+        <!--<rect x="10" y="10" width="200" height="40" style="fill:url(#l-r);stroke:rgb(0,0,0);"></rect>-->
+        <!--<rect x="10" y="60" width="200" height="40" style="fill:url(#r-l);stroke:rgb(0,0,0);"></rect>-->
+        <!--<rect x="220" y="10" width="40" height="200" style="fill:url(#t-b);stroke:rgb(0,0,0);"></rect>-->
+        <!--<rect x="270" y="10" width="40" height="200" style="fill:url(#b-t);stroke:rgb(0,0,0);"></rect>-->
+        <!--<rect x="10" y="110" width="200" height="200" style="fill:url(#lt-rb);stroke:rgb(0,0,0);"></rect>-->
+
+
+
+        <!--<defs>-->
+            <!--<linearGradient id="l-r">-->
+                <!--<stop offset="0%" style="stop-color:#ffcc00;"></stop>-->
+                <!--<stop offset="100%" style="stop-color:#0099cc;"></stop>-->
+            <!--</linearGradient>-->
+            <!--<linearGradient id="repeat" xlink:href="#l-r"   x1="20%" x2="40%" y1="30%" y2="80%" spreadMethod="repeat" ></linearGradient>-->
+            <!--<linearGradient id="pad" xlink:href="#l-r"   x1="20%" x2="40%" y1="30%" y2="80%" spreadMethod="pad" ></linearGradient>-->
+            <!--<linearGradient id="reflect" xlink:href="#l-r"   x1="20%" x2="40%" y1="30%" y2="80%" spreadMethod="reflect" ></linearGradient>-->
+        <!--</defs>-->
+        <!--<rect x="0" y="0" width="100" height="100" style="fill:url(#repeat)"></rect>-->
+        <!--<rect x="110" y="0" width="100" height="100" style="fill:url(#pad)"></rect>-->
+        <!--<rect x="0" y="110" width="100" height="100" style="fill:url(#reflect)"></rect>-->
+
+        <!--<defs>-->
+            <!--<radialGradient id="radialGradient" spreadMethod="repeat">-->
+                <!--<stop offset="0" style="stop-color: #ffcc00" ></stop>-->
+                <!--<stop offset="50%" style="stop-color: #0099cc" ></stop>-->
+                <!--<stop offset="100%" style="stop-color: #ff0000" ></stop>-->
+            <!--</radialGradient>-->
+            <!--<radialGradient id="radialGradient1" cx="0" cy="0" r="100%">-->
+                <!--<stop offset="0" style="stop-color: #ffcc00" ></stop>-->
+                <!--<stop offset="50%" style="stop-color: #0099cc" ></stop>-->
+                <!--<stop offset="100%" style="stop-color: #ff0000" ></stop>-->
+            <!--</radialGradient>-->
+            <!--<radialGradient id="radialGradient2" cx="0" cy="0" r="100%" fx="20%" fy="30%">-->
+                <!--<stop offset="0" style="stop-color: #ffcc00" ></stop>-->
+                <!--<stop offset="50%" style="stop-color: #0099cc" ></stop>-->
+                <!--<stop offset="100%" style="stop-color: #ff0000" ></stop>-->
+            <!--</radialGradient>-->
+        <!--</defs>-->
+        <!--<rect x="0" y="0" width="100" height="100" style="fill:url(#radialGradient);" ></rect>-->
+        <!--<rect x="120" y="0" width="100" height="100" style="fill:url(#radialGradient1);" ></rect>-->
+        <!--<rect x="0" y="120" width="100" height="100" style="fill:url(#radialGradient2);" ></rect>-->
+
+
+        <!--<defs>-->
+            <!--<linearGradient id="linearGradient" gradientTransform="skewX(50)" >-->
+                <!--<stop offset="0%" style="stop-color: #ffcc00;"></stop>-->
+                <!--<stop offset="100%" style="stop-color: #0099cc;"></stop>-->
+            <!--</linearGradient>-->
+            <!--<pattern id="pattern" patternTransform="skewX(10)" patternUnits="objectBoundingBox" patternContentUnits="objectBoundingBox" x="0" y="0" width="20%" height="20%"  style="fill:none;stroke: rgb(0,0,0);stroke-width: 0.01;" >-->
+                <!--<path d="M0 0Q0.05 0.2 0.1 0.1 T0.2 0.2" ></path>-->
+                <!--<path d="M0 0L0 0.2 0.2 0.2 0.2 0"></path>-->
+            <!--</pattern>-->
+        <!--</defs>-->
+        <!--<rect x="0" y="0" width="200" height="200" style="fill:url(#linearGradient)"></rect>-->
+        <!--<rect x="0" y="210" width="200" height="200" style="fill:url(#pattern)"></rect>-->
+
+
+        <!--<text x="20" y="20"> 简单的文字</text>-->
+        <!--<text x="20" y="50" style="stroke:rgb(0,0,0);"> 简单的文字</text>-->
+        <!--<text x="20" y="80" style="stroke:rgb(0,0,0);stroke-width: 0.5;fill:none;"> 简单的文字</text>-->
+
+
+        <!--<text x="20" y="120" style="text-anchor:start;"> start </text>-->
+        <!--<text x="20" y="150" style="text-anchor:middle;"> center </text>-->
+        <!--<text x="20" y="180" style="text-anchor:end;"> end </text>-->
+
+
+        <!--<text x="120" y="20">-->
+            <!--F-->
+            <!--<tspan dy="8">u</tspan>-->
+            <!--<tspan dy="10">l</tspan>-->
+            <!--<tspan dy="12">l</tspan>-->
+        <!--</text>-->
+        <!--<text x="120" y="70">-->
+            <!--hello world,-->
+            <!--<tspan x="130" y="100"> world hello</tspan>-->
+        <!--</text>-->
+        <!--<text x="120" y="160">-->
+            <!--<tspan dx="0 0 0 0 0 0" dy="0 0 0 0 0 0">shack</tspan>-->
+        <!--</text>-->
+        <!--<text x="120" y="190">-->
+            <!--<tspan dx="0 -4 3 5 -3 2" dy="3 -5 2 -8 5 5">shack</tspan>-->
+        <!--</text>-->
+        <!--<text x="120" y="220">-->
+            <!--CO<tspan style="baseline-shift:sub">2</tspan>-->
+        <!--</text>-->
+        <!--<text x="120" y="250">-->
+            <!--2 x 10 <tspan style="baseline-shift:super;">2</tspan>-->
+        <!--</text>-->
+        <!--<text x="20" y="20"  > hello world</text>-->
+        <!--<text x="20" y="50" textLength="50" lengthAdjust="spacing">hello world</text>-->
+        <!--<text x="20" y="80" textLength="50" lengthAdjust="spacingAndGlyphs">hello world</text>-->
+
+        <!--<text x="20" y="20" style="writing-mode:tb;glyph-orientation-vertical:0" >hello world</text>-->
+        <!--<text x="40" y="20" style="writing-mode: tb;" >hello world</text>-->
+        <!--<text x="60" y="20" style="writing-mode: tb;">垂直文字</text>-->
+        <!--<text x="90" y="20" transform="rotate(90,90,20)" >hello world</text>-->
+
+
+        <!--<defs>-->
+            <!--<path id="textPath1" d="M20 20 Q 40 80 80 20"></path>-->
+        <!--</defs>-->
+        <!--<text style="font-size: 12px;">-->
+            <!--<textPath xlink:href="#textPath1" startOffset="50%">-->
+                <!--hello world!hello world!-->
+            <!--</textPath>-->
+        <!--</text>-->
+        <!--<use xlink:href="#textPath1" style="stroke: rgb(0,0,0);fill:none;"></use>-->
+
+        <!--<defs>-->
+            <!--<clipPath id="curveClip">-->
+                <!--<path id="curvePath" d="M5 55 C 25 5, 45 -25, 75 55, 85 85, 20 105, 40 55 Z" style="stroke:rgb(0,0,0);fill:none;"></path>-->
+            <!--</clipPath>-->
+            <!--<clipPath id="textClip">-->
+                <!--<text id="textPath" x="20" y="20" transform="rotate(60)" style="fill: none;stroke:rgb(0,0,0);stroke-width: 0.5;font-size: 48px;">-->
+                    <!--CLIP-->
+                <!--</text>-->
+            <!--</clipPath>-->
+            <!--<g id="pathObject">-->
+                <!--<rect x="0" y="50" width="90" height="60" style="fill: #999;"/>-->
+                <!--<circle cx="25" cy="25" r="25" style="fill: #666;"/>-->
+                <!--<polygon points="30 0 80 0 80 100" style="fill: #ccc;"/>-->
+            <!--</g>-->
+        <!--</defs>-->
+        <!--<use xlink:href="#pathObject" transform="translate(10 10)" ></use>-->
+        <!--<use xlink:href="#pathObject" transform="translate(150 10)" style="clip-path: url(#curveClip)"></use>-->
+        <!--<g  transform="translate(10 180)">-->
+            <!--<use xlink:href="#textPath"></use>-->
+        <!--</g>-->
+        <!--<g transform="translate(150 180)" >-->
+            <!--<use xlink:href="#pathObject" style="clip-path: url(#textClip)"></use>-->
+        <!--</g>-->
+
+        <!--<defs>-->
+            <!--<mask id="mask1" maskContentUnits="objectBoundingBox" x="0" y="0" width="1" height="1">-->
+                <!--<rect x="0" y="0" width="1" height="1" style="fill:#fff;"></rect>-->
+            <!--</mask>-->
+            <!--<mask id="mask2" maskContentUnits="objectBoundingBox" x="0" y="0" width="1" height="1">-->
+                <!--<rect x="0" y="0" width="1" height="1" style="fill:#000;"></rect>-->
+            <!--</mask>-->
+            <!--<mask id="mask3" maskContentUnits="objectBoundingBox" x="0" y="0" width="1" height="1">-->
+                <!--<rect x="0" y="0" width="1" height="1" style="fill-opacity: 0.5;fill:#fff;"></rect>-->
+            <!--</mask>-->
+            <!--<mask id="mask4" maskContentUnits="objectBoundingBox" x="0" y="0" width="1" height="1">-->
+                <!--<rect x="0" y="0" width="1" height="1" style="fill-opacity: 0.2;fill:#fff;"></rect>-->
+            <!--</mask>-->
+        <!--</defs>-->
+
+        <!--<g style="mask:url(#mask1)">-->
+            <!--<circle cx="25" cy="25" r="25" style="fill:rgb(0,0,0);"></circle>-->
+        <!--</g>-->
+        <!--<g style="mask:url(#mask2)" transform="translate(60 0)">-->
+            <!--<circle cx="25" cy="25" r="25" style="fill:rgb(0,0,0);"></circle>-->
+        <!--</g>-->
+        <!--<g style="mask:url(#mask3)" transform="translate(120 0)">-->
+            <!--<circle cx="25" cy="25" r="25" style="fill:rgb(0,0,0);"></circle>-->
+        <!--</g>-->
+        <!--<g style="mask:url(#mask4)" transform="translate(180 0)">-->
+            <!--<circle cx="25" cy="25" r="25" style="fill:rgb(0,0,0);"></circle>-->
+        <!--</g>-->
+
+
+        <defs>
+            <g id="petal">
+                <path d="M 10 0 Q 27 -15 40 0 27 15 10 0" />
+            </g>
+
+            <g id="flower">
+                <path  d="M 50 50 Q 40 70, 70 100 T 70 150" style="stroke: green; fill: none; stroke-width: 3;"/>
+                <path d="M 70 100 Q 80 70, 120 80, 90 75, 75 105" style="stroke: none; fill: green;"/>
+                <circle cx="40" cy="50" r="10" style="fill: gray;"/>
+                <g style="stroke: black; fill: yellow;">
+                    <use xlink:href="#petal" transform="translate(40,50)"/>
+                    <use xlink:href="#petal" transform="translate(40,50) rotate(40)"/>
+                    <use xlink:href="#petal" transform="translate(40,50) rotate(80)"/>
+                    <use xlink:href="#petal" transform="translate(40,50) rotate(120)"/>
+                    <use xlink:href="#petal" transform="translate(40,50) rotate(160)"/>
+                    <use xlink:href="#petal" transform="translate(40,50) rotate(200)"/>
+                    <use xlink:href="#petal" transform="translate(40,50) rotate(240)"/>
+                    <use xlink:href="#petal" transform="translate(40,50) rotate(280)"/>
+                    <use xlink:href="#petal" transform="translate(40,50) rotate(320)"/>
+                </g>
+            </g>
+
+            <filter id="blur">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2"></feGaussianBlur>
+            </filter>
+
+            <filter id="blur-graphic">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="2"></feGaussianBlur>
+            </filter>
+
+            <filter id="drop-shadow">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+                <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+                <feMerge>
+                    <feMergeNode in="offsetBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="filter-image">
+                <feImage xlink:href="../../images/1.jpg" result="sky" />
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+                <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+                <feMerge>
+                    <feMergeNode in="sky" />
+                    <feMergeNode in="offsetBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+
+        <use xlink:href="#flower"></use>
+        <use xlink:href="#flower" filter="url(#blur)" x="120" ></use>
+        <use xlink:href="#flower" filter="url(#blur-graphic)" x="240" ></use>
+        <use xlink:href="#flower" filter="url(#drop-shadow)" x="360"></use>
+        <use xlink:href="#flower" filter="url(#filter-image)" x="0" y="150"></use>
+
+
+    </svg>
+</body>
+</html>
