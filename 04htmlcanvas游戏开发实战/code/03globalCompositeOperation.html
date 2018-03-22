@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>globalCompositeOperation</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        #canvas{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas">
+
+    </div>
+
+    <script>
+        var compositeType = ['copy','darker','destination-atop','destination-in','destination-out','destination-over','lighter','source-atop','source-in','source-out','source-over','xor'],
+            x=0,y=0;
+        var container = document.getElementById('canvas');
+
+        for(var i=0;i<compositeType.length;i++){
+            var canvas = document.createElement('canvas'),
+                ctx = canvas.getContext('2d');
+            canvas.width = canvas.height = 200;
+
+            ctx.save();
+            ctx.fillStyle = '#cccccc';
+            ctx.fillRect(x+20,y+20,100,60);
+            ctx.globalCompositeOperation = compositeType[i];
+            ctx.fillStyle = '#5b9ace';
+            ctx.beginPath();
+            ctx.arc(x+120,y+80,40,0,2*Math.PI,true);
+            ctx.fill();
+            ctx.restore();
+            ctx.font=" 12px Arial";
+            ctx.textAlign = 'center';
+            ctx.fillText(compositeType[i],x+100,y+150);
+
+            container.appendChild(canvas);
+        }
+    </script>
+</body>
+</html>
