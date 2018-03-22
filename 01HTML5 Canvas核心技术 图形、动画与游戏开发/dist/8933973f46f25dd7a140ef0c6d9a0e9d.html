@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>arc</title>
+</head>
+<body>
+	<canvas id="canvas" style="border:1px solid #ccc;"></canvas>
+
+	<script type="text/javascript">
+		var canvas = document.getElementById('canvas'),
+			context = canvas.getContext('2d');
+		canvas.width = 1000;
+		canvas.height = 300;
+
+		context.fillStyle = '#ff0000';
+		context.shadowColor = '#ccc';
+		context.shadowOffsetX = 5;
+		context.shadowOffsetY = 5;
+		context.shadowBlur = 10;
+
+		context.arc(50,50,30,0,Math.PI/4,false);
+		context.fill();
+
+
+    context.beginPath();
+    var x0 = 150,y0=50;
+    var x1 = 250,y1=50;
+    var x2 = 250,y2=100;
+
+    context.beginPath();
+    context.moveTo(x0,y0);
+    context.arcTo(x1,y1,x2,y2,20);
+    context.lineTo(x2,y2);
+
+    context.stroke();
+
+
+    function createBoxRadius(color,radius,x,y,width,height){
+      context.beginPath();
+      context.moveTo(x+radius,y);
+      context.arcTo(x+width,y,x+width,y+height,radius);
+      context.arcTo(x+width,y+height,x,y+height,radius);
+      context.arcTo(x,y+height,x,y,radius);
+      context.arcTo(x,y,x+width,y,radius);
+      context.strokeStyle = color;
+      context.stroke();
+      context.fillStyle = color;
+      context.fill();
+    }
+
+    createBoxRadius('#ff0000',10,500,50,100,100);
+
+    createBoxRadius('#000000',10,700,50,100,100);
+
+
+
+	</script>
+</body>
+</html>

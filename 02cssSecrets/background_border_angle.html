@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>background_border_angle</title>
+	<style type="text/css">
+		.border_angle{
+			width: 500px;
+			height: 300px;
+			margin-top:20px;
+			position:relative;
+		}
+		.border_angle_1{
+			background:linear-gradient(-135deg,transparent 50%,#cccccc 0) no-repeat 100% 0 /43px 43px,linear-gradient(-135deg,transparent 30px,#598FD2 0) ;
+		}
+		.border_angle_2{
+			background:linear-gradient(-150deg,transparent 30px,#598FD2 0) ;
+			border-radius: 10px;
+		}
+		.border_angle_2::before{
+			content: '';
+			z-index: 1;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 60px; 
+			height: 34.64px;
+			background: linear-gradient(150deg,transparent 50%,#cccccc 0);
+			transform: rotate(60deg);
+			border-bottom-right-radius: inherit;
+			box-shadow: 2px 2px 2px #404040;
+		}
+		/* sin30° = 0.5 ; cos30° = 0.866 */
+		/* width = 30/sin30° height= 20/cos30° */
+
+	</style>
+</head>
+<body>
+	<div class="border_angle border_angle_1"></div>
+	<div class="border_angle border_angle_2"></div>
+</body>
+</html>

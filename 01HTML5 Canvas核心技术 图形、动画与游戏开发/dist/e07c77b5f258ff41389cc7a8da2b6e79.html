@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			overflow: hidden;
+		}
+		#img_border{
+			border:2px solid #BBBA31;
+			display:none;
+			position: absolute;
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="500" height="500" id="canvas" style="border:1px solid #ccc"></canvas>
+	<div id="img_border"></div>
+	<img src="/dist/1023c1854eec13f5af2df418fd41f961.png">
+	<script type="text/javascript">
+		var canvas = document.getElementById('canvas'),
+			context = canvas.getContext('2d'),
+			img_border = document.getElementById('img_border'),
+			image = new Image(),
+			mouseDownFlag = false,
+			mouseDownPoint = {x:0,y:0,x1:0,y1:0};
+		canvas.addEventListener('mousedown',function(e){
+			img_border.style.left = e.clientX + 'px';
+			img_border.style.top = e.clientY+ 'px';
+			img_border.style.right = (window.innerWidth - e.clientX) +'px';
+			img_border.style.bottom = (window.innerHeight - e.clientY) + 'px';
+			img_border.style.display = "block";
+			mouseDownFlag = 1;
+			mouseDownPoint['x'] = e.clientX;
+			mouseDownPoint['y'] = e.clientY;
+		},false);
+		canvas.addEventListener('mousemove',function(e){
+			if(mouseDownFlag){
+				img_border.style.right = (window.innerWidth - e.clientX) +'px';
+				img_border.style.bottom = (window.innerHeight - e.clientY) + 'px';
+			}
+		},false);
+		canvas.addEventListener('mouseup',function(e){
+			if(mouseDownFlag){
+				mouseDownFlag = 0;
+				mouseDownPoint['x1'] = e.clientX;
+				mouseDownPoint['y1'] = e.clientY;
+				context.drawImage(canvas,mouseDownPoint['x'],mouseDownPoint['y'],mouseDownPoint['x1'] -mouseDownPoint['x'] ,mouseDownPoint['y1']-mouseDownPoint['y'],0,0,canvas.width,canvas.height);
+				img_border.style.display = "none";
+
+			}
+		},false);
+
+		image.src = './image/arch.png';
+		image.onload = function(){
+			canvas.width = image.width;
+			canvas.height = image.height;
+			context.drawImage(image,0,0,canvas.width,canvas.height,0,0,canvas.width,canvas.height);
+		}
+
+
+
+	</script>
+</body>
+</html>

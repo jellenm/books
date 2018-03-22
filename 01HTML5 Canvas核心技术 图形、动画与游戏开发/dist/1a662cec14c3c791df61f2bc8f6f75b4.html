@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById('canvas'),
+			context = canvas.getContext('2d');
+		var w = 500,
+			h = 500;
+		canvas.width = w;
+		canvas.height = h;
+
+		var HALF_W = w/2,
+			HALF_H = h/2,
+			rotate = 0,
+			scale = 1,
+			timing;
+
+		function drawText(text){
+			context.fillText(text,0,0);
+			context.strokeText(text,0,0);
+		}
+		
+
+		context.shadowColor = 'rgba(52,52,52,0.5)';
+		context.shadowOffsetX = 5;
+		context.shadowOffsetY = 5;
+		context.shadowBlur = 3;
+
+		context.textAlign = 'center';
+		context.textBaseLine = 'middle';
+		context.font="30px Georgia";
+
+		context.transform(1,0,0,1,HALF_W,HALF_H);
+
+		timing = setInterval(function(){
+			context.clearRect(-HALF_W,-HALF_H,w,h); //注意：clearRect 如果起始为负则为负
+			rotate = 1.5/180;
+			context.rotate(rotate);
+			scale -= 0.000001;
+			context.scale(scale,scale);
+			drawText('hello world');
+		},10);
+
+
+
+		
+
+
+	</script>
+</body>
+</html>

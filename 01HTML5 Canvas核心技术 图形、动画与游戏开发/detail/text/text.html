@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text</title>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript">
+		const WIDTH = 500,HEIGHT=500,RADIUS=150;
+		let canvas = document.getElementById('canvas'),
+			context = canvas.getContext('2d');
+		canvas.width = WIDTH;
+		canvas.height = HEIGHT;
+
+		let drawGrid = step => {
+			context.save();
+			context.lineWidth = 1;
+			context.strokeStyle = '#cccccc';
+			for(let i=step+0.5;i<WIDTH;i+=step){
+				context.beginPath();
+				context.moveTo(i,0);
+				context.lineTo(i,HEIGHT);
+				context.stroke();
+				context.closePath();
+
+				context.beginPath();
+				context.moveTo(0,i);
+				context.lineTo(WIDTH,i);
+				context.stroke();
+				context.closePath(); 
+			};
+
+			context.restore();
+		}
+		let drawCircle = text=>{
+			let start_angle = 0,
+				pre_angle = Math.ceil(360/text.length);
+			for(let i=0;i<text.length;i++){
+				let letter = text.charAt(i),
+					angle = pre_angle*i,
+					x,y;
+				x = RADIUS * Math.cos(Math.PI*angle/180);
+				y = RADIUS * Math.sin(Math.PI*angle/180);
+				context.save();
+				context.translate(WIDTH/2+x,HEIGHT/2+y);
+				context.rotate(Math.PI/2 + Math.PI*angle/180); 
+				context.fillStyle =  '#c0392b';
+				context.strokeStyle = '#8e44ad';
+				context.font = '80px Arial';
+				context.fillText(letter,0,0);
+				context.strokeText(letter,0,0);
+				context.restore();
+
+			}
+		}
+		drawGrid(20);
+		drawCircle('hello world! ')
+
+	</script>
+</body>
+</html>

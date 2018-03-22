@@ -1,0 +1,1 @@
+{"dependencies":[],"generated":{"js":"\"use strict\";\n\nonmessage = function onmessage(e) {\n  var data = e.data.data;\n  var opacity = e.data.step;\n  for (var i = 0; i < data.data.length; i += 4) {\n    data.data[i + 3] = data.data[i + 3] * opacity;\n  }\n  postMessage(data);\n};"},"hash":"471e7704118060b3d8fa6898931b50ce"}

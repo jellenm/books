@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>clip</title>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript">
+		const WIDTH = 500,HEIGHT=500;
+		let canvas = document.getElementById('canvas'),
+			context = canvas.getContext('2d');
+		let mousedownPos={},
+			mousedownFlag;
+		canvas.width = WIDTH;
+		canvas.height = HEIGHT;
+
+		function fillBG(){
+			context.save();
+			context.fillStyle = "#000";
+			context.strokeStyle = '#000';
+			context.fillRect(0,0,WIDTH,HEIGHT);
+			context.restore();
+		}
+
+		function createBigCircle(){
+			context.save();
+			context.globalAlpha = 0.5;
+			context.fillStyle = '#daa520';
+			context.beginPath();
+			context.arc(WIDTH/2,HEIGHT/2,200,0,2*Math.PI,true);
+			context.closePath();
+			context.fill();
+			context.restore();
+		}
+
+		fillBG();
+		createBigCircle();
+
+		function erease(pos){
+			context.save();
+			context.beginPath();
+			context.arc(pos.x,pos.y,30,0,2*Math.PI,true);
+			context.closePath();
+			context.clip();
+			fillBG();
+			context.stroke();
+			context.restore();
+		}
+		function posToCanvas(pos){
+			let bounding = canvas.getBoundingClientRect(),
+				x ,y;
+			x = pos.x - bounding.left;
+			y = pos.y - bounding.top;
+			return {x,y}
+		}
+		function mousedownEve(e){
+			if(e.target.tagName == 'CANVAS'){
+				mousedownFlag = true;
+				let pos = posToCanvas({x:e.pageX,y:e.pageY});
+				erease(pos);
+			}
+			
+		}
+		function mousemoveEve(e){
+			if(mousedownFlag){
+				let pos = posToCanvas({x:e.pageX,y:e.pageY});
+				erease(pos);
+			}
+		}
+		function mousedownUp(e){
+			if(mousedownFlag){
+				let pos = posToCanvas({x:e.pageX,y:e.pageY});
+				erease(pos);
+			}
+			mousedownFlag = false;
+		}
+		document.addEventListener('mousedown',mousedownEve,false);
+		document.addEventListener('mousemove',mousemoveEve,false);
+		document.addEventListener('mouseup',mousedownUp,false);
+
+	</script>
+</body>
+</html>

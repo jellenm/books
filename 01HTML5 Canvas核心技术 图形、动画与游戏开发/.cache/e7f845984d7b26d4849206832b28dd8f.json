@@ -1,0 +1,1 @@
+{"dependencies":[],"generated":{"js":"\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar firstName = 'firstName';\nexports.firstName = firstName;"},"hash":"d0c19fb84d6d14de9f591f8fe0f979e5"}

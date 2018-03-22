@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+
+	<script src="ploygon.js"></script>
+	<script>
+		
+		let canvas = document.getElementById('canvas'),
+			context = canvas.getContext('2d'),
+			CANVAS_WIDTH = 800,
+			CANVAS_HEIGHT = 800;
+		let polygons = [],
+			editing = false,
+			dragging,
+			startPos={x:0,y:0};
+		canvas.width = CANVAS_WIDTH;
+		canvas.height = CANVAS_HEIGHT;
+
+
+		function drawGrid(){
+			context.save();
+
+			var step = 20;
+			context.strokeStyle = '#ccc'; 
+			context.lineWidth = 0.5;
+
+			for(var i=step+0.5;i<CANVAS_WIDTH;i+=step){
+				context.moveTo(i,0);
+				context.lineTo(i,CANVAS_HEIGHT);
+			}
+			context.stroke();
+
+			for(i=step+0.5;i<CANVAS_HEIGHT;i+=step){
+				context.moveTo(0,i);
+				context.lineTo(CANVAS_WIDTH,i);
+			}
+			context.stroke();
+
+			context.restore();
+		}
+		drawGrid();
+
+		let ploygon = new Ploygon(0,6,50,{x:300,y:300});
+		ploygon.fill(context);
+
+		document.addEventListener('mousedown',function(e){
+			let pos = {
+				x:e.offsetX -canvas.getBoundingClientRect().left,
+				y:e.offsetY -canvas.getBoundingClientRect().top
+			}
+			ploygon.createPath(context);
+			if(context.isPointInPath(pos.x,pos.y)){
+				editing = true;
+				dragging = ploygon;
+				startPos['x'] = pos['x'] - ploygon.pos['x'];
+				startPos['y'] = pos['y'] - ploygon.pos['y'];
+			}
+		},false);
+
+		document.addEventListener('mousemove',function(e){
+			let pos = {
+				x:e.offsetX -canvas.getBoundingClientRect().left,
+				y:e.offsetY -canvas.getBoundingClientRect().top
+			}
+			if(editing&&dragging){
+				ploygon['pos']['x'] = pos['x'] - startPos['x'];
+				ploygon['pos']['y'] = pos['y'] - startPos['y'];
+				context.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
+				drawGrid();
+				
+				ploygon.fill(context);
+			}
+		},false);
+		document.addEventListener('mouseup',function(e){
+			editing = false;
+		},false);
+
+		
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>非零环绕规则</title>
+</head>
+<body>
+	<canvas id="canvas" width="800" height="500"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById('canvas'),
+			context = canvas.getContext('2d');
+		context.fillStyle = '#ff0000';
+		// true 顺时针绘制图形，false 逆时针绘制图形
+		context.arc(400,250,200,0,2*Math.PI,false);
+		context.arc(400,250,160,0,2*Math.PI,true); //false
+		context.fill();
+	</script>
+</body>
+</html>
