@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画板</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding: 20px;
+        }
+        #canvas{
+            border: 1px solid #cccccc;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <img src="" alt="" class="show-image">
+    <div class="color">
+        <h3>颜色</h3>
+        <button class="red" data-id="#ff0000">红色</button>
+        <button class="green" data-id="#00ff00">绿色</button>
+        <button class="blue" data-id="#0000ff">蓝色</button>
+    </div>
+    <div>
+        <h3>大小</h3>
+        <input type="number" max="10" min="3" placeholder="大小" value="3" >
+    </div>
+    <div>
+        <h3>功能</h3>
+        <button class="reset">清除画布</button>
+        <button class="toImage">保存成图片</button>
+    </div>
+
+    <script>
+        var canvas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d');
+        canvas.width = canvas.height = 500;
+        var colorButton = document.querySelector('.color'),
+            sizeInput = document.querySelector('input'),
+            reset = document.querySelector('.reset'),
+            toImage = document.querySelector('.toImage'),
+            showImage = document.querySelector('.show-image');
+
+        var fillStyle = '#ffffff',
+            strokeWidth = 3,
+            pos_start=[0,0],
+            downFlag = false;
+
+        function mouseDownEve(e){
+            pos_start[0] = e.pageX;
+            pos_start[1] = e.pageY;
+            downFlag = true;
+        }
+        function mouseMoveEve(e){
+            if(downFlag){
+                ctx.beginPath();
+                ctx.moveTo(pos_start[0],pos_start[1]);
+                ctx.lineTo(e.pageX,e.pageY);
+                ctx.lineWidth = strokeWidth;
+                ctx.strokeStyle = fillStyle;
+                ctx.closePath();
+                ctx.stroke();
+                pos_start[0] = e.pageX;
+                pos_start[1] = e.pageY;
+            }
+        }
+        function mouseUpEve(){
+            downFlag = false;
+        }
+
+        function resetCanvas(){
+            ctx.clearRect(0,0,500,500);
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0,0,500,500);
+        }
+
+        colorButton.addEventListener('click',function(e){
+            if(e.target.tagName === 'BUTTON'){
+                fillStyle = e.target.getAttribute('data-id');
+            }
+        },false);
+
+        sizeInput.addEventListener('change',function(){
+            strokeWidth = parseInt(this.value);
+        },false);
+
+        reset.addEventListener('click',resetCanvas,false);
+
+        toImage.addEventListener('click',function(){
+            showImage.src = canvas.toDataURL('image/png');
+        },false);
+
+        canvas.addEventListener('mousedown',mouseDownEve,false);
+        canvas.addEventListener('mousemove',mouseMoveEve,false);
+        canvas.addEventListener('mouseup',mouseUpEve,false);
+
+
+        resetCanvas();
+
+
+
+    </script>
+
+</body>
+</html>
