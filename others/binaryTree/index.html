@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+
+        function BinaryTree(){
+            var Node = function(key){
+                this.key = key;
+                this.left = null;
+                this.right = null;
+            };
+            var root,rootArr=[],preArr=[],nextArr=[];
+            this.insertNode = function(node,newNode){
+                if(newNode.key < node.key){
+                    if(!node.left){
+                        node.left = newNode;
+                    }else{
+                        this.insertNode(node.left,newNode);
+                    }
+                }else {
+                    if(!node.right){
+                        node.right = newNode;
+                    }else{
+                        this.insertNode(node.right,newNode);
+                    }
+                }
+                console.log('rootArr',root)
+            };
+            this.insert = function(key){
+                var newNode = new Node(key);
+              if(!root){
+                  root = newNode;
+              }  else {
+                  this.insertNode(root,newNode)
+              }
+            };
+
+
+            //中序遍历 ---排序 从小到大
+            var inOrderTraverseNode = function(node,callback){
+                if(node){
+                    inOrderTraverseNode(node.left,callback);
+                    rootArr.push(node.key);
+                    callback(node.key);
+                    console.log('rootArr',rootArr)
+                    inOrderTraverseNode(node.right,callback);
+                }
+            };
+            this.inOrderTraverse = function(callback){
+                inOrderTraverseNode(root,callback);
+            };
+
+            //前序遍历 -- 复制二叉树
+            var preOrderTraverseNode = function(node,callback){
+                if(node){
+                    preArr.push(node.key);
+                    console.log('preArr',preArr);
+                    preOrderTraverseNode(node.left,callback);
+                    callback(node.key);
+                    preOrderTraverseNode(node.right,callback);
+                }
+            };
+            this.preOrderTraverse = function(callback){
+                preOrderTraverseNode(root,callback);
+            };
+
+            //后序遍历 --- 文件遍历
+            var nextOrderTraverseNode = function(node,callback){
+                if(node){
+                    nextOrderTraverseNode(node.left,callback);
+                    nextOrderTraverseNode(node.right,callback);
+                    nextArr.push(node.key);
+                    console.log('nextArr',nextArr);
+                    callback(node.key);
+                }
+            };
+            this.nextOrderTraverse = function(callback){
+                nextOrderTraverseNode(root,callback);
+            };
+
+            //查找节点
+            var maxNode = function(node,callback){
+              if(node.right){
+                  maxNode(node.right,callback);
+              }else{
+                  callback(node.key);
+              }
+            };
+            this.maxNode = function(callback){
+                maxNode(root,callback);
+            };
+            var minNode = function(node,callback){
+                if(node.left){
+                    minNode(node.left,callback);
+                }else{
+                    callback(node.key);
+                }
+            };
+            this.minNode = function(callback){
+                minNode(root,callback)
+            };
+            var search = function(node,key,callback){
+                if(key === node.key){
+                    callback(node);
+                }else  if(key < node.key){
+                    search(node.left,key,callback);
+                }else {
+                    search(node.right,key,callback);
+                }
+            };
+            this.search = function(key,callback){
+                search(root,key,callback)
+            };
+
+            var removeNode = function(node,key){
+                if(!node){ return null }
+                console.log('node',root);
+                if(key > node.key){
+                    node.right = removeNode(node.right,key);
+                    return node;
+                }else if(key < node.key){
+                    node.left = removeNode(node.left,key);
+                    return node;
+                }else {
+                    if(!node.left && !node.right){
+                        node = null;
+                        return node;
+                    }
+                }
+            };
+            this.remove = function(key){
+                removeNode(root,key);
+            }
+
+        }
+        var binaryTree = new BinaryTree();
+        var nodes = [8,4,2,9,6,3,12];
+        nodes.forEach(function(item){
+            binaryTree.insert(item);
+        });
+
+        binaryTree.inOrderTraverse(function(key){});
+
+        binaryTree.preOrderTraverse(function(key){});
+
+        binaryTree.nextOrderTraverse(function(key){});
+
+        binaryTree.maxNode(function(key){
+            console.log('max',key)
+        });
+
+        binaryTree.minNode(function(key){
+            console.log('min',key)
+        });
+
+        binaryTree.search(4,function(node){
+            console.log('search',node);
+        });
+
+        // binaryTree.remove(12);
+
+
+
+
+
+    </script>
+</body>
+</html>
