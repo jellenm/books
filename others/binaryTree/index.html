@@ -117,9 +117,18 @@
                 search(root,key,callback)
             };
 
+            var findMinNode = function(node){
+                if(node){
+                    while (node.left){
+                        node = node.left;
+                    }
+                    return node;
+                }
+                return null;
+            };
             var removeNode = function(node,key){
                 if(!node){ return null }
-                console.log('node',root);
+
                 if(key > node.key){
                     node.right = removeNode(node.right,key);
                     return node;
@@ -131,6 +140,19 @@
                         node = null;
                         return node;
                     }
+                    if(!node.left){
+                        node = node.right;
+                        return node;
+                    }else if(!node.right){
+                        node = node.left;
+                        return node;
+                    }else{
+                        var min = findMinNode(node.right);
+                        node.key = min.key;
+                        node.right = removeNode(node.right,min.key);
+                        return node;
+                    }
+
                 }
             };
             this.remove = function(key){
@@ -139,7 +161,7 @@
 
         }
         var binaryTree = new BinaryTree();
-        var nodes = [8,4,2,9,6,3,12];
+        var nodes = [8,3,1,6,4,7,10,14,13];
         nodes.forEach(function(item){
             binaryTree.insert(item);
         });
@@ -162,7 +184,7 @@
             console.log('search',node);
         });
 
-        // binaryTree.remove(12);
+        binaryTree.remove(3);
 
 
 
