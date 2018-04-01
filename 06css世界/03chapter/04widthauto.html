@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>auto</title>
+    <style>
+        .block{
+            display: block;
+        }
+        .inlineBlock{
+            display: inline-block;
+        }
+        .container_1 .block{
+            width: 130px;
+            text-align: center;
+            border: 1px solid #cccccc;
+        }
+        .container_1 .inlineBlock{
+            text-align: center;
+        }
+        .container_2 .block .ao,
+        .container_2 .block .tu{
+            width: 30px;
+            margin: 20px;
+            color: #fff;
+        }
+        .container_2 .block .tu{
+            direction: rtl;
+        }
+        .container_2 .ao:before,
+        .container_2 .tu:before{
+            outline: #000000 solid 1px;
+        }
+        .container_2 .ao:before{
+            content:'love 你 love';
+        }
+        .container_2 .tu:before{
+            content:'你 love 你';
+
+        }
+        .container_3 .block{
+            white-space: nowrap;
+            width: 300px;
+            border: 1px solid #cccccc;
+            overflow: hidden;
+        }
+        .container_3 .inlineBlock{
+            margin: 0 5px;
+            height: 130px;
+        }
+        .container_3 .inlineBlock img{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container_1">
+        <h3>1、包裹性应用 (一行时居中显示，多余一行，居左显示) </h3>
+        <div class="box">
+            <div class="block" >
+                <div class="inlineBlock">
+                    一行文字时
+                </div>
+            </div>
+            <div class="block">
+                <div class="inlineBlock">
+                    两行文字时两行文字时
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container_2">
+        <h3>2、最小宽度应用(实现一个凹凸结构)</h3>
+        <div class="block">
+            <div class="ao inlineBlock"></div>
+            <div class="tu inlineBlock"></div>
+        </div>
+    </div>
+    <div class="container_3">
+        <h3>2、最大宽度</h3>
+        <div class="block" >
+            <div id="swiper">
+                <div class="inlineBlock">
+                    <img src="../libs/img/1.jpg" alt="">
+                </div>
+                <div class="inlineBlock">
+                    <img src="../libs/img/1.jpg" alt="">
+                </div>
+                <div class="inlineBlock">
+                    <img src="../libs/img/1.jpg" alt="">
+                </div>
+                <div class="inlineBlock">
+                    <img src="../libs/img/1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var swiperDom = document.querySelector('#swiper'),
+            downFlag = false,
+            leavePosition=0,
+            mousePosition=0;
+        swiperDom.addEventListener('mousedown',function(e){
+            e.preventDefault();
+            downFlag = true;
+            mousePosition = e.pageX;
+
+        },false);
+        swiperDom.addEventListener('mousemove',function(e){
+            if(downFlag){
+                var distanceX = e.pageX - mousePosition;
+                swiperDom.style.transform = "translate("+(leavePosition + distanceX)+"px)";
+            }
+        },false);
+        swiperDom.addEventListener('mouseup',function(e){
+            if(downFlag){
+                downFlag = false;
+                leavePosition = leavePosition + (e.pageX - mousePosition);
+                console.log('leavePosition',leavePosition)
+            }
+        },false)
+    </script>
+
+</body>
+</html>

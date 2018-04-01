@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style>
+        .container{
+            display: flex;
+        }
+
+        .container .left{
+            /*flex-grow / flex-shrink /flex-basis*/
+            flex: 0 0 300px;
+        }
+        .container .center{
+            flex: 1 1 auto;
+        }
+        .container .right{
+            flex: 0 0 300px;
+        }
+
+    </style>
+<body>
+    <div class="container">
+        <div class="item left">left</div>
+        <div class="item center">center</div>
+        <div class="item right">right</div>
+    </div>
+</body>
+</html>
