@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>boxSizing</title>
+    <style>
+        .container{
+            width: 500px;
+            border: 1px solid #ccc;
+        }
+        #t1{
+            display: block;
+        }
+        #t2{
+            display: inline-block;
+        }
+        #t3{
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <textarea id="t1" >display:block </textarea>
+        <textarea id="t2" >display:inline-block </textarea>
+        <textarea id="t3" >box-sizing:border-box</textarea>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>height:100%</title>
+    <style>
+        .father{
+            background: #205764;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .father span{
+            display: inline-block;
+            width: 100%;
+            background: #BBBA31;
+        }
+        .box{
+            display: inline-block;
+            width: 300px;
+            height: 180px;
+            background-color: #7F4FEE;
+            padding: 30px;
+            vertical-align: top;
+            position: relative;
+        }
+        .child{
+            height: 100%;
+            background: #598FD2;
+        }
+        .box2 .child{
+            width: 100%;
+            position: absolute;
+        }
+        .box3 .child{
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <img src="../libs/img/1.jpg" alt="">
+        <span>宽度100%文字文字文字文字文字文字文字</span>
+    </div>
+    <div></div>
+    <div class="box box1">
+        <div class="child">
+            高度100%
+        </div>
+    </div>
+    <div class="box box2">
+        <div class="child">
+            高度100%
+        </div>
+    </div>
+    <div class="box box3">
+        <div class="child">
+            高度100%
+        </div>
+    </div>
+</body>
+</html>
