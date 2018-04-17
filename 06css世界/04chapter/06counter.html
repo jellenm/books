@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计数器</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .reset{
+            counter-reset: add;
+        }
+        .counter::before{
+            content:counters(add,'-') '. ';
+            counter-increment:add;
+        }
+    </style>
+</head>
+<body>
+    <div class="reset">
+        <div class="counter">章节一
+            <div class="reset">
+                <div class="counter">第一小节
+                    <div class="reset">
+                        <div class="counter">第一课</div>
+                        <div class="counter">第二课</div>
+                    </div>
+                </div>
+                <div class="counter">第二小节</div>
+                <div class="counter">第三小节</div>
+            </div>
+        </div>
+        <div class="counter">章节二
+            <div class="reset">
+                <div class="counter">第一小节</div>
+                <div class="counter">第二小节</div>
+                <div class="counter">第三小节</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

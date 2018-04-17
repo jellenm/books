@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加载中</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        @keyframes dot {
+            33% {
+                transform: translateY(-2em);
+            }
+            66% {
+                transform: translateY(-1em);
+            }
+        }
+        .container{
+            margin-top: 100px;
+            text-align: center;
+        }
+        span{
+            text-align: left;
+            display: inline-block;
+            height: 1em;
+            line-height:1em;
+            overflow: hidden;
+
+        }
+        span::before{
+            content: '...\A..\A.';
+            white-space: pre-wrap;
+            display: block;
+            animation:dot 2s infinite step-start both;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        加载中<span class="dot">...</span>
+    </div>
+</body>
+</html>

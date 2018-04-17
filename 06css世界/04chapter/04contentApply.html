@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>content辅助元素生成</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            margin-top:100px;
+            text-align: center;
+        }
+        .box{
+            width: 200px;
+            height: 180px;
+            display: inline-block;
+            text-align: justify;
+            border-left: 1px dashed #cccccc;
+            border-bottom: 1px dashed #cccccc;
+        }
+        .box::after{
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+        .box::before{
+            content: '';
+            display: inline-block;
+            height: 100%;
+        }
+        .box .bar{
+            display: inline-block;
+            /*vertical-align: bottom;*/
+            height: 20px;
+            width: 20px;
+            background: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"><i class="bar"></i>
+            <i class="bar"></i>
+            <i class="bar"></i>
+            <i class="bar"></i>
+            <i class="bar"></i>
+        </div>
+    </div>
+</body>
+</html>
