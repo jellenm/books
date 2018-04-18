@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin实现登高</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            overflow: hidden;
+        }
+        .con-left{
+            float: left;
+            width: 100px;
+            background: red;
+            padding-bottom: 9999px;
+            margin-bottom: -9999px;
+        }
+        .con-right{
+            float: left;
+            width: 100px;
+            background: blue;
+            padding-bottom: 9999px;
+            margin-bottom: -9999px;
+        }
+        #btn{
+            cursor: pointer;
+            border: 1px solid #cccccc;
+            padding: 5px;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="con-left" id="left">
+            <p>内容1</p>
+            <p>内容2</p>
+            <p>内容3</p>
+            <p>内容4</p>
+        </div>
+        <div class="con-right">
+            <p>内容1</p>
+            <p>内容2</p>
+        </div>
+    </div>
+    <div id="btn">加一行内容</div>
+    <script>
+        var btn = document.getElementById('btn'),
+            left = document.getElementById('left');
+        btn.addEventListener('click',function(){
+            var p = document.createElement('p');
+            p.innerHTML = '添加内容';
+            left.appendChild(p);
+        },false)
+    </script>
+</body>
+</html>

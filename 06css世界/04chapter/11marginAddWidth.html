@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用margin来增加元素宽度案例</title>
+    <style>
+        .lists{
+            margin: 0;
+            padding: 0;
+            margin-right: -20px;
+            list-style: none;
+            display: inline-block;
+            border: 1px solid #000;
+        }
+        .lists li{
+            width:100px;
+            height: 100px;
+            border: 1px solid #cccccc;
+            margin-right: 20px;
+            float: left;
+        }
+        .article{
+            width: 800px;
+        }
+        
+        .article>.full{
+            float: left;
+            width: 100%;
+        }
+        .article>.full p{
+            margin-right: 150px;
+        }
+        .article>img{
+            width: 140px;
+            float: left;
+            margin-left: -140px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="lists">
+       <li>item1</li>
+       <li>item2</li>
+       <li>item3</li>
+    </ul> <div style="display: inline-block">123</div>
+
+    <div class="article">
+        <div class="full">
+            <p>以人民为中心，是红墙意识的直接体现。西城区全面推行民生工作民意立项制度，明确了凡是与百姓利益相关的事情，都要充分征集群众意见，作为决策的重要依据。目前，已经完成的132个涉及住房改善、社会服务等方面的项目，个个环节都采纳了群众意见。民生工作民意立项的做法，如今已经在北京全市推广。</p>
+        </div>
+        <img src="../libs/img/1.jpg" alt="">
+    </div>
+</body>
+</html>

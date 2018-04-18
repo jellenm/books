@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有意思的内联盒子的padding 从0往上加</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 200px;
+            margin-top: 300px;
+        }
+        .box3{
+            border: 2px dashed #000000;
+        }
+        span{
+            padding: 50%;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box3">
+        <span>内有文字若干</span>
+    </div>
+</div>
+</body>
+</html>

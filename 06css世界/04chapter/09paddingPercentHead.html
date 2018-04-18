@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>padding实现固定比例的页头</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            padding: 20% 50%;
+            position: relative;
+            overflow: hidden;
+        }
+        .box img{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="../libs/img/1.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>
