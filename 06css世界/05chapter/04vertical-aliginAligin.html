@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直对齐</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            margin: 50px;
+        }
+        .box1{
+            height: 200px;
+            width: 300px;
+            text-align: center;
+            background: #598FD2;
+            line-height: 200px;
+            border: 1px solid #000000;
+            margin-bottom: 50px;
+        }
+        .box1 img{
+            height: 130px;
+            vertical-align: middle;
+        }
+        .box2{
+            display: table;
+            height: 200px;
+            width: 300px;
+            text-align: center;
+            background: #598FD2;
+            border: 1px solid #000000;
+        }
+        .box2 .box{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .box2 .box img{
+            height: 138px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <img src="../libs/img/1.jpg" />
+        </div>
+        <div class="box2">
+            <div class="box">
+                <img src="../libs/img/1.jpg" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

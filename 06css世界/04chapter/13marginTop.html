@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin合并现象</title>
+    <style>
+        .container{
+            height: 100px;
+            background: url("../libs/img/1.jpg");
+        }
+        h3{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>css世界</h3>
+    </div>
+
+    <pre>
+        解决方法
+            1、父元素为块状格式化上下文元素
+            2、设置border-top/border-bottom
+            3、设置padding-top/padding-bottom
+            4、父子之间加个有内容内联元素分割
+    </pre>
+
+</body>
+</html>

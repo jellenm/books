@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin失效</title>
+    <style>
+        .container,.container2{
+            height: 500px;
+            border-top: 1px solid #ccc;
+        }
+        .container img{
+            float: left;
+            width: 200px;
+        }
+        .container p{
+            margin-left: 130px;
+        }
+        .container2 img{
+            width: 200px;
+            margin-top: -300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../libs/img/1.jpg" alt="">
+        <p>无效</p>
+    </div>
+    <div></div>
+    <div class="container2">
+        <img src="../libs/img/1.jpg" alt="">
+    </div>
+</body>
+</html>
