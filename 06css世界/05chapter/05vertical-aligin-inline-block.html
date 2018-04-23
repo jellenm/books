@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inline-block对齐</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin: 50px;
+            width: 300px;
+        }
+        div img{
+            width: 80px;
+        }
+        i{
+            width: 80px;
+            display: inline-block;
+            border-bottom: 1px dashed #ff0000;
+        }
+        .box1{
+            line-height: 0;
+        }
+        .box2{
+            font-size: 0;
+        }
+
+        .box3{
+            line-height: 0;
+        }
+        .box3 i{
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <h4>自身展示</h4>
+    <div>
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <i class="dash-line"></i>
+        <i class="dash-line"></i>
+        <i class="dash-line"></i>
+    </div>
+
+    <h4>幽灵空白节点</h4>
+    <div class="x-height">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <i class="dash-line"></i>
+        <i class="dash-line"></i>
+        <i class="dash-line"></i>
+        x-height
+    </div>
+
+    <h4>line-height: 0</h4>
+    <div class="box1">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <i class="dash-line"></i>
+        <i class="dash-line"></i>
+        <i class="dash-line"></i>
+        x-height
+    </div>
+
+    <h4>line-height: 0;+空格</h4>
+    <div class="box1">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <i class="dash-line">&nbsp</i>
+        <i class="dash-line">&nbsp</i>
+        <i class="dash-line">&nbsp</i>
+        x-height
+    </div>
+
+    <h4>font-size: 0;</h4>
+    <div class="box2">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <i class="dash-line"></i>
+        <i class="dash-line"></i>
+        <i class="dash-line"></i>
+        x-height
+    </div>
+
+    <h4>line-height: 0;+vertical-aligin</h4>
+    <div class="box3">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <img src="../libs/img/1.jpg" alt="">
+        <i class="dash-line"></i>
+        <i class="dash-line"></i>
+        <i class="dash-line"></i>
+        x-height
+    </div>
+
+
+</body>
+</html>
