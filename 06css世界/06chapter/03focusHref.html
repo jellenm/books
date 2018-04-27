@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>锚点定位</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            margin: 50px;
+            width: 300px;
+        }
+        .container .pic-box{
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border: 1px solid #cccccc;
+        }
+        .container .pic-box-item{
+            height: 200px;
+            background: #bcff51;
+        }
+        .container .pic-box-item input{
+            visibility: hidden;
+        }
+        .container .pic-box-item:nth-child(2){
+            background: #65a6ff;
+        }
+        .container .pic-box-item:nth-child(3){
+            background: #ffe430;
+        }
+        .container .pic-box-item:nth-child(4){
+            background: #ff3aa6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="pic-box">
+            <div class="pic-box-item">
+                <input id="one">
+                box1
+            </div>
+            <div class="pic-box-item">
+                <input id="two">
+                box2
+            </div>
+            <div class="pic-box-item">
+                <input id="three">
+                box3
+            </div>
+            <div class="pic-box-item">
+                <input id="four">
+                box4
+            </div>
+        </div>
+        <div class="lists">
+            <a href="#one">1</a>
+            <a href="#two">2</a>
+            <a href="#three">3</a>
+            <a href="#four">4</a>
+        </div>
+    </div>
+
+</body>
+</html>

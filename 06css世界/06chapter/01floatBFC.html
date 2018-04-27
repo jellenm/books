@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float和BFC自适应</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            margin:100px 0 0 100px;
+            width: 400px;
+            border: 1px solid #cccccc;
+        }
+        .container img{
+            float: left;
+            width: 100px;
+            margin-right: 10px;
+        }
+        .container p{
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../libs/img/1.jpg" alt="">
+        <p>新华网北京4月26日电 在24至25日沿长江考察调研后，26日下午，习近平总书记在武汉主持召开了深入推动长江经济带发展座谈会，为长江经济带发展进一步指引方向，作出部署。</p>
+    </div>
+</body>
+</html>

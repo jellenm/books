@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹框实现</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .container::before{
+            content: ' ';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        .dialog{
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 15px;
+            color: #000;
+            background: #ffffff;
+            padding: 10px;
+            border-radius:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dialog">
+            内容部分
+        </div>
+    </div>
+</body>
+</html>
