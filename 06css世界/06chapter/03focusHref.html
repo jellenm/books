@@ -21,9 +21,16 @@
         .container .pic-box-item{
             height: 200px;
             background: #bcff51;
+            position: relative;
         }
         .container .pic-box-item input{
-            visibility: hidden;
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+            clip: rect(0,0,0,0);
         }
         .container .pic-box-item:nth-child(2){
             background: #65a6ff;
@@ -58,12 +65,82 @@
             </div>
         </div>
         <div class="lists">
-            <a href="#one">1</a>
-            <a href="#two">2</a>
-            <a href="#three">3</a>
-            <a href="#four">4</a>
+            <!--<a href="#one">1</a>-->
+            <!--<a href="#two">2</a>-->
+            <!--<a href="#three">3</a>-->
+            <!--<a href="#four">4</a>-->
+            <label for="one">1</label>
+            <label for="two">2</label>
+            <label for="three">3</label>
+            <label for="four">4</label>
         </div>
     </div>
 
+    <div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <script>
+        var labels = document.querySelectorAll('label'),
+            picBox = document.querySelector('.pic-box');
+        labels.forEach(function(item,index){
+            item.setAttribute('for',null);
+            item.addEventListener('click',function(){
+                picBox.scrollTo(0,index*200);
+            },false);
+           // console.log('item',item)
+        });
+    </script>
 </body>
 </html>
