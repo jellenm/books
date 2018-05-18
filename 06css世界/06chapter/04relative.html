@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>relative</title>
+    <style>
+        .c{
+            position: relative;
+            border: 1px solid #cccccc;
+        }
+        .f .c1{
+            left: 20px;
+            top: 20px;
+        }
+        .f1 .c1{
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+        <div class="f">
+            <div class="c c1">123</div>
+            <div class="c c2">234</div>
+        </div>
+
+        <div class="f1">
+            <div class="c c1">123</div>
+            <div class="c c2">234</div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景和负z-index</title>
+    <style>
+        .f{
+            background:blue;
+            width: 300px;
+        }
+        .f img{
+            position: relative;
+            z-index: -1;
+        }
+        .f1{
+            background: blue;
+            width: 300px;
+            transform: scale(1);
+        }
+        .f1 img{
+            position: relative;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="f">
+        <img src="../libs/img/1.jpg" alt="">
+    </div>
+
+    <div class="f1">
+        <img src="../libs/img/1.jpg" alt="">
+    </div>
+
+</body>
+</html>
