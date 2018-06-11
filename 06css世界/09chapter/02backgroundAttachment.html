@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-attachment</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 500px;
+            height: 500px;
+            background: url("../libs/img/1.jpg");
+            position: relative;
+            background-attachment: fixed;
+        }
+        .drag{
+            width: 100px;
+            height: 100px;
+            background:inherit;
+            filter:blur(5px);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="drag" id="drag"></div>
+    </div>
+
+    <script>
+        var drag = document.getElementById('drag');
+        var dragFlag = false,
+            oldPosition = {x:0,y:0},
+            disPosition = {x:0,y:0};
+
+        drag.addEventListener('mousedown',function(e){
+            disPosition['x'] = e.pageX - oldPosition['x'];
+            disPosition['y'] = e.pageY - oldPosition['y'];
+            dragFlag = true;
+        },false)
+        drag.addEventListener('mousemove',function(e){
+            if(dragFlag){
+                var x = e.pageX,
+                    y = e.pageY;
+                drag.style.left = x - disPosition['x'] +'px';
+                drag.style.top = y - disPosition['y'] +'px';
+            }
+        },false)
+        drag.addEventListener('mouseleave',function(e){
+            dragFlag = false;
+            oldPosition['x'] = e.pageX - disPosition['x'];
+            oldPosition['y'] = e.pageX - disPosition['y'];
+        },false)
+    </script>
+</body>
+</html>

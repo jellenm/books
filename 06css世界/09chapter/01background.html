@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background</title>
+    <style>
+        .container{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            left: 100%;
+            position: absolute;
+        }
+        .container1{
+            background: url("../libs/img/1.jpg") no-repeat;
+            background-size:200px 200px;
+            background-position: 100% 100%;
+        }
+        .container2{
+            background: url("../libs/img/1.jpg") no-repeat;
+            background-size:200px 200px;
+            background-position: -50% -50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../libs/img/1.jpg" alt="">
+    </div>
+    <div class="container container1">
+        background-position: 100% 100%;
+    </div>
+    <div class="container container2">
+        background-position: -50% -50%;
+    </div>
+</body>
+</html>
